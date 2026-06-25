@@ -28,6 +28,14 @@ export function getTemplates(): Record<string, Template> {
   return templates;
 }
 
+/** Resolve a product's template, honouring a per-product override. */
+export function getTemplateForProduct(product: Product): Template {
+  if (product.template && templates[product.template]) {
+    return templates[product.template];
+  }
+  return getActiveTemplate();
+}
+
 /** Turn a theme's token map into an inline CSS-variable style object. */
 export function themeStyle(theme: Theme): Record<string, string> {
   return theme.tokens as Record<string, string>;

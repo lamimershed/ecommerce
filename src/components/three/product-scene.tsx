@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Lightformer, Float, ContactShadows, OrbitControls } from "@react-three/drei";
 import type { Mesh } from "three";
 
-type ModelKind = "torus" | "sphere" | "box";
+type ModelKind = "torus" | "sphere" | "box" | "surahi";
 
 function SpinningModel({ kind, color }: { kind: ModelKind; color: string }) {
   const ref = useRef<Mesh>(null);
@@ -20,7 +20,9 @@ function SpinningModel({ kind, color }: { kind: ModelKind; color: string }) {
   return (
     <Float speed={1.4} rotationIntensity={0.5} floatIntensity={1}>
       <mesh ref={ref} castShadow receiveShadow>
-        {kind === "torus" && <torusKnotGeometry args={[0.85, 0.27, 220, 36]} />}
+        {(kind === "torus" || kind === "surahi") && (
+          <torusKnotGeometry args={[0.85, 0.27, 220, 36]} />
+        )}
         {kind === "sphere" && <icosahedronGeometry args={[1.2, 1]} />}
         {kind === "box" && <boxGeometry args={[1.5, 1.5, 1.5]} />}
         <meshPhysicalMaterial

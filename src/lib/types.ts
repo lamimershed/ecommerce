@@ -1,3 +1,8 @@
+export interface StorySection {
+  title: string;
+  body: string;
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -10,11 +15,15 @@ export interface Product {
   reviews: number;
   inStock: boolean;
   color: string;
-  model: "torus" | "sphere" | "box";
+  model: "torus" | "sphere" | "box" | "surahi";
+  /** Optional per-product template override (defaults to the active template). */
+  template?: string;
   image: string;
   gallery: string[];
   specs: Record<string, string>;
   highlights: string[];
+  /** Scrollytelling copy used by the immersive "artisan" template. */
+  story?: StorySection[];
 }
 
 export interface ThemeTokens {
@@ -53,6 +62,8 @@ export interface SiteConfig {
   activeTemplate: string;
   hero: { eyebrow: string; headline: string; subhead: string };
   marquee: string[];
+  /** WhatsApp number in international format, no "+" (e.g. 917907131971). */
+  whatsapp: string;
   social: { twitter: string; instagram: string };
   nav: { label: string; href: string }[];
 }

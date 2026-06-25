@@ -126,5 +126,54 @@
       "Adjustable braided cord",
       "Dimmer-switch compatible"
     ]
+  },
+  {
+    "slug": "morning-hut-ceramic-surahi-pitcher-set",
+    "name": "Morning Hut Ceramic Surahi Pitcher With 4 Matching Glasses",
+    "tagline": "A handmade, hand-painted village morning in your hands.",
+    "description": "Great mornings deserve great stories. The Morning Hut Ceramic Surahi Pitcher With 4 Matching Glasses is a one-of-a-kind handmade and hand-painted 5-piece set — one tall, elegant Surahi pitcher with lid and four matching glasses — alive with a charming village scene of colourful huts, birds and trees dotted with cheerful polka dots that make every pour feel like a warm morning tale. Crafted from clay by skilled Indian artists in Khurja, Uttar Pradesh — the ceramic heartland of India — each piece carries generations of craft in every stroke. Made by hand, painted by hand, finished by hand — so no two are ever exactly alike. Tall, cheerful, and weighted just right — perfect for water, juice, sharbat, or your favourite cold brew. Not just a pitcher set. A little village morning in your hands.",
+    "price": 2499,
+    "currency": "INR",
+    "category": "Khurja Ceramics",
+    "rating": 4.9,
+    "reviews": 38,
+    "inStock": true,
+    "color": "#21409a",
+    "model": "surahi",
+    "template": "artisan",
+    "image": "/products/morning-hut/full-set.jpg",
+    "gallery": [
+      "/products/morning-hut/surahi-table.jpg",
+      "/products/morning-hut/glasses.jpg",
+      "/products/morning-hut/surahi-board.jpg"
+    ],
+    "specs": {
+      "Set": "1 Surahi pitcher with lid + 4 glasses",
+      "Material": "Khurja clay ceramic",
+      "Finish": "Hand-painted, food-safe glaze",
+      "Origin": "Khurja, Uttar Pradesh, India",
+      "Pitcher capacity": "1.2 L",
+      "Care": "Hand wash recommended"
+    },
+    "highlights": [
+      "Handmade & hand-painted — no two are alike",
+      "Village scene of huts, birds, trees & polka dots",
+      "Tall surahi with lid + 4 matching glasses",
+      "Perfect for water, juice, sharbat or cold brew"
+    ],
+    "story": [
+      {
+        "title": "A little village morning",
+        "body": "Colourful huts, birds and trees dotted with cheerful polka dots — every pour feels like a warm morning tale."
+      },
+      {
+        "title": "Made by hand in Khurja",
+        "body": "Shaped from clay by skilled artists in Khurja, Uttar Pradesh — the ceramic heartland of India — carrying generations of craft in every stroke."
+      },
+      {
+        "title": "One pitcher, four glasses",
+        "body": "A tall, elegant surahi with lid and four matching glasses. Weighted just right for water, juice, sharbat or your favourite cold brew."
+      }
+    ]
   }
 ]

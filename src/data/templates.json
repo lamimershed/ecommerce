@@ -40,5 +40,19 @@
       "layout": "split",
       "showSpecs": false
     }
+  },
+  "artisan": {
+    "label": "Artisan",
+    "description": "An immersive, mobile-first scrollytelling page for handmade pieces — the 3D product travels through the story as you scroll.",
+    "home": {
+      "hero": "minimal",
+      "layout": "grid",
+      "columns": 3
+    },
+    "product": {
+      "media": "scroll3d",
+      "layout": "immersive",
+      "showSpecs": true
+    }
   }
 }
