@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import type { ProductSceneProps } from "@/components/three/product-scene";
+import { SceneBoundary } from "@/components/three/scene-fallback";
 
 /**
  * Client-side wrapper that lazy-loads the WebGL canvas. Keeping the 3D bundle
@@ -18,5 +19,9 @@ const ProductScene = dynamic(() => import("@/components/three/product-scene"), {
 });
 
 export default function Scene(props: ProductSceneProps) {
-  return <ProductScene {...props} />;
+  return (
+    <SceneBoundary color={props.color}>
+      <ProductScene {...props} />
+    </SceneBoundary>
+  );
 }

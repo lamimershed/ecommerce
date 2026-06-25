@@ -24,7 +24,7 @@ interface ProductGridProps {
 export function ProductGrid({
   products,
   eyebrow = "Collection",
-  title = "Everything in the catalog",
+  title = "The full catalogue",
   description,
   id = "collection",
 }: ProductGridProps) {
@@ -33,27 +33,26 @@ export function ProductGrid({
   const masonry = template.home.layout === "masonry";
 
   return (
-    <section id={id} className="container scroll-mt-20 py-16 md:py-24">
-      <div className="mb-10 flex flex-col gap-2">
-        <p className="text-sm font-medium uppercase tracking-wider text-accent">
-          {eyebrow}
-        </p>
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          {title}
-        </h2>
-        <p className="max-w-xl text-muted-foreground">
+    <section id={id} className="container scroll-mt-20 py-20 md:py-28">
+      <div className="mb-12 flex flex-col gap-6 border-b border-border pb-8 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-3">
+          <span className="label">{eyebrow}</span>
+          <h2 className="display text-4xl tracking-tight md:text-5xl">{title}</h2>
+        </div>
+        <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
           {description ?? template.description}
         </p>
       </div>
+
       <div
         className={cn(
-          "grid grid-cols-1 gap-6",
+          "grid grid-cols-1 gap-x-6 gap-y-12",
           columnClass[columns] ?? columnClass[3],
-          masonry && "md:[&>*:nth-child(even)]:mt-8"
+          masonry && "md:[&>*:nth-child(even)]:mt-12"
         )}
       >
-        {products.map((product) => (
-          <ProductCard key={product.slug} product={product} />
+        {products.map((product, i) => (
+          <ProductCard key={product.slug} product={product} index={i} />
         ))}
       </div>
     </section>

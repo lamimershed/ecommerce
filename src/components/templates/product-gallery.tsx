@@ -11,7 +11,7 @@ export function ProductGallery({ product }: { product: Product }) {
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-square overflow-hidden rounded-2xl border border-border bg-muted">
+      <div className="relative aspect-square overflow-hidden rounded-sm border border-border bg-muted">
         <Image
           src={images[active]}
           alt={`${product.name} view ${active + 1}`}
@@ -29,8 +29,8 @@ export function ProductGallery({ product }: { product: Product }) {
             onClick={() => setActive(i)}
             aria-label={`Show ${product.name} view ${i + 1}`}
             className={cn(
-              "relative aspect-square overflow-hidden rounded-lg border bg-muted transition-all",
-              active === i ? "border-primary ring-2 ring-primary/40" : "border-border"
+              "relative aspect-square overflow-hidden rounded-sm border bg-muted transition-all",
+              active === i ? "border-foreground ring-1 ring-foreground" : "border-border opacity-70 hover:opacity-100"
             )}
           >
             <Image src={src} alt="" fill sizes="120px" className="object-cover" />

@@ -4,32 +4,70 @@
 
 @layer base {
   :root {
-    /* Fallback tokens; the active theme overrides these on <html> at runtime. */
-    --background: 224 71% 4%;
-    --foreground: 210 20% 98%;
-    --card: 224 60% 7%;
-    --card-foreground: 210 20% 98%;
-    --primary: 263 70% 60%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 28% 14%;
-    --muted-foreground: 217 12% 65%;
-    --accent: 189 94% 55%;
-    --accent-foreground: 224 71% 4%;
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 263 70% 60%;
-    --radius: 0.9rem;
+    /* Fallback tokens (Atelier); the active theme overrides these on <html>. */
+    --background: 40 30% 95%;
+    --foreground: 30 10% 10%;
+    --card: 40 33% 97%;
+    --card-foreground: 30 10% 10%;
+    --primary: 30 10% 10%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 38 20% 89%;
+    --secondary-foreground: 30 10% 10%;
+    --muted: 38 18% 90%;
+    --muted-foreground: 32 7% 42%;
+    --accent: 12 78% 50%;
+    --accent-foreground: 40 33% 97%;
+    --border: 34 15% 84%;
+    --input: 34 15% 84%;
+    --ring: 30 10% 10%;
+    --radius: 0.25rem;
   }
 
   * {
     @apply border-border;
   }
 
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* Display headings use the serif with optical sizing + tight tracking. */
+  h1, h2, h3 {
+    font-feature-settings: "ss01";
+  }
+}
+
+@layer components {
+  /* Small uppercase mono label used for eyebrows, indices and meta. */
+  .label {
+    @apply font-mono text-[0.7rem] font-medium uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .display {
+    @apply font-display font-light tracking-tightest;
+    font-optical-sizing: auto;
+  }
+
+  /* Animated link underline that grows from the left. */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
   }
 }
 
@@ -39,5 +77,33 @@
   }
   .text-pretty {
     text-wrap: pretty;
+  }
+
+  /* Subtle film grain overlaid on the page background. */
+  .bg-grain {
+    position: relative;
+  }
+  .bg-grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Hairline grid backdrop. */
+  .bg-hairlines {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.7) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.7) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
 }

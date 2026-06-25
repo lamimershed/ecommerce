@@ -51,6 +51,8 @@ export interface SiteConfig {
   currency: string;
   activeTheme: string;
   activeTemplate: string;
+  hero: { eyebrow: string; headline: string; subhead: string };
+  marquee: string[];
   social: { twitter: string; instagram: string };
   nav: { label: string; href: string }[];
 }

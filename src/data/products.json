@@ -10,7 +10,7 @@
     "rating": 4.8,
     "reviews": 214,
     "inStock": true,
-    "color": "#7c5cff",
+    "color": "#C2410C",
     "model": "torus",
     "image": "https://picsum.photos/seed/aurora-lamp/1200/900",
     "gallery": [
@@ -20,14 +20,14 @@
     ],
     "specs": {
       "Material": "Anodized aluminium",
-      "Light source": "Dimmable LED, 2700–4000K",
+      "Light source": "Dimmable LED, 2700\u20134000K",
       "Power": "9W",
       "Reach": "55 cm",
       "Warranty": "5 years"
     },
     "highlights": [
       "Stepless dimming from candlelight to daylight",
-      "Magnetic 270° rotating head",
+      "Magnetic 270\u00b0 rotating head",
       "Memory of your last brightness setting"
     ]
   },
@@ -42,7 +42,7 @@
     "rating": 4.9,
     "reviews": 87,
     "inStock": true,
-    "color": "#22d3ee",
+    "color": "#5B7B6F",
     "model": "sphere",
     "image": "https://picsum.photos/seed/nimbus-chair/1200/900",
     "gallery": [
@@ -67,14 +67,14 @@
     "slug": "monolith-bookshelf",
     "name": "Monolith Bookshelf",
     "tagline": "Modular steel shelving that grows with your library.",
-    "description": "Monolith is a powder-coated steel shelving system built around a single repeating module. Stack it, span it, or wall-mount it — the tool-free connectors let you reconfigure the whole thing in minutes.",
+    "description": "Monolith is a powder-coated steel shelving system built around a single repeating module. Stack it, span it, or wall-mount it \u2014 the tool-free connectors let you reconfigure the whole thing in minutes.",
     "price": 620,
     "currency": "USD",
     "category": "Storage",
     "rating": 4.7,
     "reviews": 142,
     "inStock": true,
-    "color": "#34d399",
+    "color": "#64748B",
     "model": "box",
     "image": "https://picsum.photos/seed/monolith-shelf/1200/900",
     "gallery": [
@@ -85,7 +85,7 @@
     "specs": {
       "Material": "Powder-coated steel",
       "Load per shelf": "40 kg",
-      "Module size": "40 × 40 cm",
+      "Module size": "40 \u00d7 40 cm",
       "Assembly": "Tool-free",
       "Warranty": "15 years"
     },
@@ -99,14 +99,14 @@
     "slug": "halo-pendant-light",
     "name": "Halo Pendant Light",
     "tagline": "A floating ring of warm light for any table.",
-    "description": "The Halo Pendant suspends a continuous ring of diffused LEDs from a slim braided cord. It throws a soft, even glow that flatters food and faces alike — ideal above a dining table or kitchen island.",
+    "description": "The Halo Pendant suspends a continuous ring of diffused LEDs from a slim braided cord. It throws a soft, even glow that flatters food and faces alike \u2014 ideal above a dining table or kitchen island.",
     "price": 310,
     "currency": "USD",
     "category": "Lighting",
     "rating": 4.6,
     "reviews": 65,
     "inStock": false,
-    "color": "#f472b6",
+    "color": "#B08D57",
     "model": "torus",
     "image": "https://picsum.photos/seed/halo-pendant/1200/900",
     "gallery": [
