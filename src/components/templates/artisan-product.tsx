@@ -60,6 +60,12 @@ export function ArtisanProduct({ product, phone, productUrl }: Props) {
             <h1 className="display mt-4 max-w-[16ch] text-balance text-4xl leading-[0.95] sm:text-6xl lg:text-7xl">
               {product.name}
             </h1>
+            {/* Hand-painted folk dots */}
+            <div className="mt-5 flex gap-1.5" aria-hidden>
+              {["#cf3b2e", "#e8b53a", "#3f8fd0", "#5a9b54", "#1f3f97"].map((c) => (
+                <span key={c} className="h-2.5 w-2.5 rounded-full" style={{ background: c }} />
+              ))}
+            </div>
             <p className="mt-6 max-w-md text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               {product.tagline}
             </p>
@@ -151,9 +157,13 @@ export function ArtisanProduct({ product, phone, productUrl }: Props) {
       </section>
 
       {/* Final WhatsApp CTA */}
-      <section className="border-t border-border bg-secondary/40">
-        <div className="container flex flex-col items-center gap-6 py-20 text-center md:py-28">
-          <span className="label">Order direct</span>
+      <section className="relative overflow-hidden border-t border-border bg-secondary/40">
+        <div className="pointer-events-none absolute inset-0 bg-dots-accent opacity-60" />
+        <div className="container relative flex flex-col items-center gap-6 py-20 text-center md:py-28">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            Handmade · Hand-painted · One of a kind
+          </span>
           <h2 className="display max-w-[18ch] text-balance text-3xl leading-[1.05] md:text-5xl">
             Bring a little village morning into your home.
           </h2>

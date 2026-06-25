@@ -1,4 +1,26 @@
 {
+  "khurja": {
+    "label": "Khurja",
+    "mode": "light",
+    "tokens": {
+      "--background": "42 40% 95%",
+      "--foreground": "222 47% 14%",
+      "--card": "40 44% 97%",
+      "--card-foreground": "222 47% 14%",
+      "--primary": "223 65% 36%",
+      "--primary-foreground": "42 44% 97%",
+      "--secondary": "210 32% 89%",
+      "--secondary-foreground": "222 47% 14%",
+      "--muted": "40 24% 90%",
+      "--muted-foreground": "220 16% 38%",
+      "--accent": "8 68% 49%",
+      "--accent-foreground": "42 44% 97%",
+      "--border": "40 20% 83%",
+      "--input": "40 20% 83%",
+      "--ring": "223 65% 36%",
+      "--radius": "0.4rem"
+    }
+  },
   "atelier": {
     "label": "Atelier",
     "mode": "light",

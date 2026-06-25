@@ -5,7 +5,7 @@
   "url": "https://lumina-store.example.com",
   "locale": "en_US",
   "currency": "USD",
-  "activeTheme": "atelier",
+  "activeTheme": "khurja",
   "activeTemplate": "aurora",
   "hero": {
     "eyebrow": "The Index — Vol. 01",
@@ -22,5 +22,20 @@
     { "label": "Home", "href": "/" },
     { "label": "Collection", "href": "/#collection" },
     { "label": "About", "href": "/#about" }
-  ]
+  ],
+  "seo": {
+    "titleTemplate": "%s · Lumina Store",
+    "defaultTitle": "Lumina Store — Handmade Khurja ceramics & design objects",
+    "description": "Handmade, hand-painted Khurja ceramics and curated design objects. Each piece is shaped and painted by hand by artisans in Khurja, Uttar Pradesh — no two are ever alike.",
+    "keywords": [
+      "Khurja pottery",
+      "hand-painted ceramics",
+      "handmade surahi",
+      "ceramic pitcher set",
+      "Indian handicraft",
+      "design objects"
+    ],
+    "ogImage": "/products/morning-hut/full-set.jpg",
+    "twitterCard": "summary_large_image"
+  }
 }

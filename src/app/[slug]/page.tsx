@@ -7,6 +7,7 @@ import {
   getTemplateForProduct,
   site,
 } from "@/lib/config";
+import { buildProductMetadata } from "@/lib/metadata";
 import { ProductTemplate } from "@/components/templates/product-template";
 import { ArtisanProduct } from "@/components/templates/artisan-product";
 import { ProductGrid } from "@/components/templates/product-grid";
@@ -24,28 +25,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const product = getProductBySlug(params.slug);
   if (!product) return {};
-
-  const url = `${site.url}/${product.slug}`;
-  const title = `${product.name} — ${product.tagline}`;
-
-  return {
-    title: product.name,
-    description: product.tagline,
-    alternates: { canonical: `/${product.slug}` },
-    openGraph: {
-      type: "website",
-      url,
-      title,
-      description: product.description,
-      images: [{ url: product.image, width: 1200, height: 900, alt: product.name }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description: product.tagline,
-      images: [product.image],
-    },
-  };
+  return buildProductMetadata(product);
 }
 
 export default function ProductPage({ params }: PageProps) {

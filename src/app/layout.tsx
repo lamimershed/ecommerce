@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { site, getActiveTheme, themeStyle } from "@/lib/config";
+import { getActiveTheme, themeStyle } from "@/lib/config";
+import { buildSiteMetadata } from "@/lib/metadata";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
@@ -25,36 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
-  },
-  description: site.description,
-  keywords: ["design", "furniture", "lighting", "ecommerce", site.name],
-  authors: [{ name: site.name }],
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: site.locale,
-    url: site.url,
-    siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
-    description: site.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: site.social.twitter,
-    title: `${site.name} — ${site.tagline}`,
-    description: site.description,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
-  },
-};
+export const metadata: Metadata = buildSiteMetadata();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const theme = getActiveTheme();

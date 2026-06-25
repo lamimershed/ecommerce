@@ -3,6 +3,15 @@ export interface StorySection {
   body: string;
 }
 
+export interface SeoMeta {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  keywords?: string[];
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -24,6 +33,8 @@ export interface Product {
   highlights: string[];
   /** Scrollytelling copy used by the immersive "artisan" template. */
   story?: StorySection[];
+  /** Per-product SEO overrides; falls back to name/tagline/image when absent. */
+  seo?: SeoMeta;
 }
 
 export interface ThemeTokens {
@@ -66,4 +77,13 @@ export interface SiteConfig {
   whatsapp: string;
   social: { twitter: string; instagram: string };
   nav: { label: string; href: string }[];
+  /** Site-wide SEO defaults, all driven from JSON. */
+  seo: {
+    titleTemplate: string;
+    defaultTitle: string;
+    description: string;
+    keywords: string[];
+    ogImage: string;
+    twitterCard: "summary" | "summary_large_image";
+  };
 }

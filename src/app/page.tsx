@@ -1,15 +1,9 @@
-import type { Metadata } from "next";
-import { getProducts, site } from "@/lib/config";
+import { getProducts } from "@/lib/config";
 import { HomeHero } from "@/components/templates/home-hero";
 import { ProductGrid } from "@/components/templates/product-grid";
 
-export const metadata: Metadata = {
-  title: `${site.name} — ${site.tagline}`,
-  description: site.description,
-  alternates: { canonical: "/" },
-};
-
-/** Root route is the storefront home page. */
+/** Root route is the storefront home page. Metadata comes from the JSON-driven
+ *  site defaults in the root layout. */
 export default function HomePage() {
   const products = getProducts();
   const featured = products[0];

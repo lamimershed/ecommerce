@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    /* Fallback tokens (Atelier); the active theme overrides these on <html>. */
-    --background: 40 30% 95%;
-    --foreground: 30 10% 10%;
-    --card: 40 33% 97%;
-    --card-foreground: 30 10% 10%;
-    --primary: 30 10% 10%;
-    --primary-foreground: 40 33% 97%;
-    --secondary: 38 20% 89%;
-    --secondary-foreground: 30 10% 10%;
-    --muted: 38 18% 90%;
-    --muted-foreground: 32 7% 42%;
-    --accent: 12 78% 50%;
-    --accent-foreground: 40 33% 97%;
-    --border: 34 15% 84%;
-    --input: 34 15% 84%;
-    --ring: 30 10% 10%;
-    --radius: 0.25rem;
+    /* Fallback tokens (Khurja); the active theme overrides these on <html>. */
+    --background: 42 40% 95%;
+    --foreground: 222 47% 14%;
+    --card: 40 44% 97%;
+    --card-foreground: 222 47% 14%;
+    --primary: 223 65% 36%;
+    --primary-foreground: 42 44% 97%;
+    --secondary: 210 32% 89%;
+    --secondary-foreground: 222 47% 14%;
+    --muted: 40 24% 90%;
+    --muted-foreground: 220 16% 38%;
+    --accent: 8 68% 49%;
+    --accent-foreground: 42 44% 97%;
+    --border: 40 20% 83%;
+    --input: 40 20% 83%;
+    --ring: 223 65% 36%;
+    --radius: 0.4rem;
   }
 
   * {
@@ -100,6 +100,16 @@
       linear-gradient(to right, hsl(var(--border) / 0.7) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--border) / 0.7) 1px, transparent 1px);
     background-size: 64px 64px;
+  }
+
+  /* Hand-painted polka-dot motif — the signature of this pottery. */
+  .bg-dots {
+    background-image: radial-gradient(hsl(var(--primary) / 0.18) 1.6px, transparent 1.7px);
+    background-size: 18px 18px;
+  }
+  .bg-dots-accent {
+    background-image: radial-gradient(hsl(var(--accent) / 0.22) 1.6px, transparent 1.7px);
+    background-size: 22px 22px;
   }
 
   .mask-fade-r {
