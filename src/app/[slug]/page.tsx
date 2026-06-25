@@ -1,0 +1,73 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  getProductBySlug,
+  getProductSlugs,
+  getProducts,
+  site,
+} from "@/lib/config";
+import { ProductTemplate } from "@/components/templates/product-template";
+import { ProductGrid } from "@/components/templates/product-grid";
+import { ProductJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+
+interface PageProps {
+  params: { slug: string };
+}
+
+/** Pre-render a static page for every product slug at build time. */
+export function generateStaticParams() {
+  return getProductSlugs().map((slug) => ({ slug }));
+}
+
+export function generateMetadata({ params }: PageProps): Metadata {
+  const product = getProductBySlug(params.slug);
+  if (!product) return {};
+
+  const url = `${site.url}/${product.slug}`;
+  const title = `${product.name} — ${product.tagline}`;
+
+  return {
+    title: product.name,
+    description: product.tagline,
+    alternates: { canonical: `/${product.slug}` },
+    openGraph: {
+      type: "website",
+      url,
+      title,
+      description: product.description,
+      images: [{ url: product.image, width: 1200, height: 900, alt: product.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: product.tagline,
+      images: [product.image],
+    },
+  };
+}
+
+export default function ProductPage({ params }: PageProps) {
+  const product = getProductBySlug(params.slug);
+  if (!product) notFound();
+
+  const related = getProducts().filter((p) => p.slug !== product.slug).slice(0, 3);
+
+  return (
+    <>
+      <ProductJsonLd product={product} />
+      <BreadcrumbJsonLd product={product} />
+      <ProductTemplate product={product} />
+      {related.length > 0 && (
+        <div className="border-t border-border/60">
+          <ProductGrid
+            products={related}
+            id="related"
+            eyebrow="You may also like"
+            title="Related pieces"
+            description="More from the collection, hand-picked to pair with this one."
+          />
+        </div>
+      )}
+    </>
+  );
+}

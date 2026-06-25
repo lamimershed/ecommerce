@@ -1,0 +1,68 @@
+{
+  "midnight": {
+    "label": "Midnight",
+    "mode": "dark",
+    "tokens": {
+      "--background": "224 71% 4%",
+      "--foreground": "210 20% 98%",
+      "--card": "224 60% 7%",
+      "--card-foreground": "210 20% 98%",
+      "--primary": "263 70% 60%",
+      "--primary-foreground": "210 20% 98%",
+      "--secondary": "215 28% 17%",
+      "--secondary-foreground": "210 20% 98%",
+      "--muted": "215 28% 14%",
+      "--muted-foreground": "217 12% 65%",
+      "--accent": "189 94% 55%",
+      "--accent-foreground": "224 71% 4%",
+      "--border": "215 28% 17%",
+      "--input": "215 28% 17%",
+      "--ring": "263 70% 60%",
+      "--radius": "0.9rem"
+    }
+  },
+  "sunrise": {
+    "label": "Sunrise",
+    "mode": "light",
+    "tokens": {
+      "--background": "40 38% 97%",
+      "--foreground": "24 30% 12%",
+      "--card": "0 0% 100%",
+      "--card-foreground": "24 30% 12%",
+      "--primary": "20 90% 55%",
+      "--primary-foreground": "40 38% 97%",
+      "--secondary": "35 40% 92%",
+      "--secondary-foreground": "24 30% 12%",
+      "--muted": "35 30% 90%",
+      "--muted-foreground": "24 12% 40%",
+      "--accent": "340 82% 60%",
+      "--accent-foreground": "40 38% 97%",
+      "--border": "33 25% 85%",
+      "--input": "33 25% 85%",
+      "--ring": "20 90% 55%",
+      "--radius": "0.5rem"
+    }
+  },
+  "forest": {
+    "label": "Forest",
+    "mode": "dark",
+    "tokens": {
+      "--background": "155 30% 6%",
+      "--foreground": "150 20% 96%",
+      "--card": "155 28% 9%",
+      "--card-foreground": "150 20% 96%",
+      "--primary": "152 62% 45%",
+      "--primary-foreground": "155 30% 6%",
+      "--secondary": "155 20% 16%",
+      "--secondary-foreground": "150 20% 96%",
+      "--muted": "155 20% 13%",
+      "--muted-foreground": "150 10% 62%",
+      "--accent": "84 70% 55%",
+      "--accent-foreground": "155 30% 6%",
+      "--border": "155 20% 16%",
+      "--input": "155 20% 16%",
+      "--ring": "152 62% 45%",
+      "--radius": "1.2rem"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Lumina Store",
+  "tagline": "Design objects for modern living",
+  "description": "Lumina Store is a curated marketplace of premium design objects, furniture, and lighting. SEO-friendly, lightning fast, and beautifully crafted.",
+  "url": "https://lumina-store.example.com",
+  "locale": "en_US",
+  "currency": "USD",
+  "activeTheme": "midnight",
+  "activeTemplate": "aurora",
+  "social": {
+    "twitter": "@luminastore",
+    "instagram": "luminastore"
+  },
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Collection", "href": "/#collection" },
+    { "label": "About", "href": "/#about" }
+  ]
+}

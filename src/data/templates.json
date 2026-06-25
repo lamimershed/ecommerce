@@ -1,0 +1,44 @@
+{
+  "aurora": {
+    "label": "Aurora",
+    "description": "Immersive 3D hero with a full-bleed gallery grid.",
+    "home": {
+      "hero": "scene3d",
+      "layout": "spotlight",
+      "columns": 3
+    },
+    "product": {
+      "media": "scene3d",
+      "layout": "split",
+      "showSpecs": true
+    }
+  },
+  "editorial": {
+    "label": "Editorial",
+    "description": "Magazine-style typography with a calm, content-first layout.",
+    "home": {
+      "hero": "minimal",
+      "layout": "masonry",
+      "columns": 2
+    },
+    "product": {
+      "media": "gallery",
+      "layout": "stacked",
+      "showSpecs": true
+    }
+  },
+  "boutique": {
+    "label": "Boutique",
+    "description": "Dense product grid optimized for browsing large catalogs.",
+    "home": {
+      "hero": "minimal",
+      "layout": "grid",
+      "columns": 4
+    },
+    "product": {
+      "media": "gallery",
+      "layout": "split",
+      "showSpecs": false
+    }
+  }
+}
