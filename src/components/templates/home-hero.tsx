@@ -2,8 +2,9 @@ import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
 import { site, getActiveTemplate } from "@/lib/config";
 import type { Product } from "@/lib/types";
-import { formatPrice } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import Scene from "@/components/three/scene";
+import ArtisanScene from "@/components/three/artisan-scene";
 
 /**
  * Home hero whose media is selected by the active template's `home.hero`
@@ -54,8 +55,17 @@ export function HomeHero({ featured }: { featured: Product }) {
 
         {/* Right: 3D / image media */}
         <div className="relative md:col-span-5">
-          <div className="relative h-[340px] overflow-hidden rounded-sm border border-border bg-card md:h-full md:min-h-[460px]">
-            {variant === "scene3d" ? (
+          <div
+            className={cn(
+              "relative h-[340px] overflow-hidden rounded-sm border border-border md:h-full md:min-h-[460px]",
+              featured.model === "surahi"
+                ? "bg-[radial-gradient(95%_90%_at_50%_15%,hsl(var(--primary)/0.18),hsl(var(--secondary)))]"
+                : "bg-card"
+            )}
+          >
+            {featured.model === "surahi" ? (
+              <ArtisanScene color={featured.color} className="h-full w-full" />
+            ) : variant === "scene3d" ? (
               <Scene
                 model={featured.model}
                 color={featured.color}

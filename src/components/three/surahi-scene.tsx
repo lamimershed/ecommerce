@@ -71,7 +71,7 @@ function makeDots(count: number): Dot[] {
   return dots;
 }
 
-function Ceramic({ sectionRef }: { sectionRef: RefObject<HTMLElement> }) {
+function Ceramic({ sectionRef }: { sectionRef?: RefObject<HTMLElement> }) {
   const group = useRef<THREE.Group>(null);
   const lid = useRef<THREE.Group>(null);
   const cups = useRef<(THREE.Group | null)[]>([]);
@@ -89,7 +89,7 @@ function Ceramic({ sectionRef }: { sectionRef: RefObject<HTMLElement> }) {
   const dots = useMemo(() => makeDots(46), []);
 
   useFrame((state, delta) => {
-    const el = sectionRef.current;
+    const el = sectionRef?.current;
     let p = 0;
     if (el) {
       const rect = el.getBoundingClientRect();
@@ -179,7 +179,7 @@ function Ceramic({ sectionRef }: { sectionRef: RefObject<HTMLElement> }) {
 }
 
 export interface SurahiSceneProps {
-  sectionRef: RefObject<HTMLElement>;
+  sectionRef?: RefObject<HTMLElement>;
   className?: string;
 }
 

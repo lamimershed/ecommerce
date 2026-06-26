@@ -18,7 +18,7 @@ export default function ArtisanScene({
   color,
   className,
 }: {
-  sectionRef: RefObject<HTMLElement>;
+  sectionRef?: RefObject<HTMLElement>;
   color?: string;
   className?: string;
 }) {
