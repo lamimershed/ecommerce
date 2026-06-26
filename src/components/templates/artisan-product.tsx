@@ -105,14 +105,14 @@ export function ArtisanProduct({ product, phone, productUrl }: Props) {
           </div>
 
           <div className="flex flex-col gap-8">
-            <div className="flex items-center gap-5 border-b border-border pb-5">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-border pb-5">
               <span className="font-mono text-2xl">
                 {formatPrice(product.price, product.currency)}
               </span>
-              <span className="label">
+              <span className="label whitespace-nowrap">
                 ★ {product.rating.toFixed(1)} · {product.reviews} reviews
               </span>
-              <span className="ml-auto inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.14em]">
+              <span className="ml-auto inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em]">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 {product.inStock ? "In stock" : "Made to order"}
               </span>

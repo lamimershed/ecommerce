@@ -171,9 +171,9 @@ function Ceramic({ sectionRef }: { sectionRef?: RefObject<HTMLElement> }) {
         </group>
       ))}
 
-      {/* Magic dust */}
-      <Sparkles count={40} scale={[6, 7, 6]} position={[0, 1.5, 0]} size={3.5} speed={0.35} color={COBALT} opacity={0.7} />
-      <Sparkles count={24} scale={[5, 6, 5]} position={[0, 1.8, 0]} size={2.5} speed={0.5} color="#e8b53a" opacity={0.8} />
+      {/* Magic dust — kept slow and sparse so it drifts rather than flickers */}
+      <Sparkles count={16} scale={[6, 7, 6]} position={[0, 1.5, 0]} size={4} speed={0.08} noise={0.2} color={COBALT} opacity={0.45} />
+      <Sparkles count={10} scale={[5, 6, 5]} position={[0, 1.8, 0]} size={3} speed={0.1} noise={0.2} color="#e8b53a" opacity={0.5} />
     </group>
   );
 }
