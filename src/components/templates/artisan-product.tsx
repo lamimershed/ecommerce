@@ -8,6 +8,7 @@ import { cn, formatPrice } from "@/lib/utils";
 import ArtisanScene from "@/components/three/artisan-scene";
 import { ProductGallery } from "@/components/templates/product-gallery";
 import { WhatsAppButton } from "@/components/store/whatsapp-button";
+import { FolkDots } from "@/components/store/folk-dots";
 
 interface Props {
   product: Product;
@@ -23,6 +24,9 @@ interface Props {
 export function ArtisanProduct({ product, phone, productUrl }: Props) {
   const storyRef = useRef<HTMLElement>(null);
   const story = product.story ?? [];
+  // The scroll panels already tell the full story, so the details column shows
+  // only a short lead (the first sentence) rather than repeating the paragraph.
+  const lead = `${product.description.split(". ")[0]}.`;
 
   return (
     <article>
@@ -40,11 +44,9 @@ export function ArtisanProduct({ product, phone, productUrl }: Props) {
         </div>
       </div>
 
-      {/* Scrollytelling hero — sticky 3D with story panels over it */}
-      <section
-        ref={storyRef}
-        className="relative bg-[radial-gradient(120%_80%_at_50%_0%,hsl(var(--secondary)),hsl(var(--background)))]"
-      >
+      {/* Scrollytelling hero — sticky 3D (on a plaster-wall backdrop) with
+          story panels over it */}
+      <section ref={storyRef} className="surface-wall relative">
         <div className="pointer-events-none sticky top-0 h-[100svh] w-full">
           <ArtisanScene
             sectionRef={storyRef}
@@ -60,12 +62,7 @@ export function ArtisanProduct({ product, phone, productUrl }: Props) {
             <h1 className="display mt-4 max-w-[16ch] text-balance text-4xl leading-[0.95] sm:text-6xl lg:text-7xl">
               {product.name}
             </h1>
-            {/* Hand-painted folk dots */}
-            <div className="mt-5 flex gap-1.5" aria-hidden>
-              {["#cf3b2e", "#e8b53a", "#3f8fd0", "#5a9b54", "#1f3f97"].map((c) => (
-                <span key={c} className="h-2.5 w-2.5 rounded-full" style={{ background: c }} />
-              ))}
-            </div>
+            <FolkDots className="mt-5" />
             <p className="mt-6 max-w-md text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               {product.tagline}
             </p>
@@ -84,8 +81,10 @@ export function ArtisanProduct({ product, phone, productUrl }: Props) {
                 i % 2 === 1 && "items-end text-right"
               )}
             >
-              <div className="max-w-md rounded-sm border border-border bg-background/70 p-7 backdrop-blur-md sm:p-9">
-                <span className="label">{String(i + 1).padStart(2, "0")} / {String(story.length).padStart(2, "0")}</span>
+              <div className="max-w-md rounded-sm border border-border bg-background/75 p-7 backdrop-blur-md sm:p-9">
+                <span className="label text-accent">
+                  {String(i + 1).padStart(2, "0")} / {String(story.length).padStart(2, "0")}
+                </span>
                 <h2 className="display mt-3 text-3xl leading-tight sm:text-4xl">
                   {s.title}
                 </h2>
@@ -119,9 +118,12 @@ export function ArtisanProduct({ product, phone, productUrl }: Props) {
               </span>
             </div>
 
-            <p className="max-w-prose text-pretty leading-relaxed text-foreground/90">
-              {product.description}
-            </p>
+            <div>
+              <p className="label mb-3">The details</p>
+              <p className="display max-w-prose text-pretty text-2xl leading-snug text-foreground/90">
+                {lead}
+              </p>
+            </div>
 
             <ul className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2">
               {product.highlights.map((h) => (

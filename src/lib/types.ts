@@ -75,6 +75,8 @@ export interface SiteConfig {
   marquee: string[];
   /** WhatsApp number in international format, no "+" (e.g. 917907131971). */
   whatsapp: string;
+  /** Folk paint colours from the artwork — single source for dots/accents. */
+  folk: string[];
   social: { twitter: string; instagram: string };
   nav: { label: string; href: string }[];
   /** Site-wide SEO defaults, all driven from JSON. */

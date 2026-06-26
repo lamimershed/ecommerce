@@ -5,21 +5,21 @@
 @layer base {
   :root {
     /* Fallback tokens (Khurja); the active theme overrides these on <html>. */
-    --background: 42 40% 95%;
-    --foreground: 222 47% 14%;
-    --card: 40 44% 97%;
-    --card-foreground: 222 47% 14%;
-    --primary: 223 65% 36%;
-    --primary-foreground: 42 44% 97%;
-    --secondary: 210 32% 89%;
-    --secondary-foreground: 222 47% 14%;
-    --muted: 40 24% 90%;
-    --muted-foreground: 220 16% 38%;
-    --accent: 8 68% 49%;
-    --accent-foreground: 42 44% 97%;
-    --border: 40 20% 83%;
-    --input: 40 20% 83%;
-    --ring: 223 65% 36%;
+    --background: 43 46% 95%;
+    --foreground: 224 52% 13%;
+    --card: 44 50% 97%;
+    --card-foreground: 224 52% 13%;
+    --primary: 224 64% 33%;
+    --primary-foreground: 44 50% 97%;
+    --secondary: 216 20% 84%;
+    --secondary-foreground: 224 52% 13%;
+    --muted: 38 30% 89%;
+    --muted-foreground: 222 14% 36%;
+    --accent: 6 72% 51%;
+    --accent-foreground: 44 50% 97%;
+    --border: 40 22% 82%;
+    --input: 40 22% 82%;
+    --ring: 224 64% 33%;
     --radius: 0.4rem;
   }
 
@@ -100,6 +100,23 @@
       linear-gradient(to right, hsl(var(--border) / 0.7) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--border) / 0.7) 1px, transparent 1px);
     background-size: 64px 64px;
+  }
+
+  /* Surfaces echoing the product photography: a cool plaster wall and warm
+     honey wood, used behind the 3D and for section bands. */
+  .surface-wall {
+    background-image: radial-gradient(
+      120% 100% at 50% 0%,
+      hsl(216 22% 86%),
+      hsl(216 16% 80%)
+    );
+  }
+  .surface-wood {
+    background-image: linear-gradient(
+      170deg,
+      hsl(34 42% 90%),
+      hsl(32 38% 85%)
+    );
   }
 
   /* Hand-painted polka-dot motif — the signature of this pottery. */

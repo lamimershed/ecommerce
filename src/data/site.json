@@ -1,10 +1,10 @@
 {
-  "name": "Lumina Store",
-  "tagline": "Design objects for modern living",
-  "description": "Lumina Store is a curated marketplace of premium design objects, furniture, and lighting. SEO-friendly, lightning fast, and beautifully crafted.",
+  "name": "Morning Hut",
+  "tagline": "Hand-painted Khurja ceramics",
+  "description": "Morning Hut makes handmade, hand-painted Khurja ceramics — shaped, glazed and painted by artisans in Khurja, Uttar Pradesh, the ceramic heartland of India. Every piece is one of a kind.",
   "url": "https://lumina-store.example.com",
   "locale": "en_US",
-  "currency": "USD",
+  "currency": "INR",
   "activeTheme": "khurja",
   "activeTemplate": "aurora",
   "hero": {
@@ -12,28 +12,29 @@
     "headline": "A little village morning, made by hand.",
     "subhead": "Hand-painted Khurja ceramics — shaped, glazed and painted by artisans in the ceramic heartland of India. No two pieces are ever exactly alike."
   },
-  "marquee": ["Lighting", "Seating", "Storage", "Khurja ceramics", "Hand-painted", "Made to last", "Free returns"],
+  "marquee": ["Hand-painted", "Khurja, India", "One of a kind", "Surahi + 4 glasses", "Food-safe glaze", "Made by hand", "Free returns"],
+  "folk": ["#cf3b2e", "#e8b53a", "#3f8fd0", "#5a9b54", "#e07b39", "#1f3f97"],
   "whatsapp": "917907131971",
   "social": {
-    "twitter": "@luminastore",
-    "instagram": "luminastore"
+    "twitter": "@morninghut",
+    "instagram": "morninghut"
   },
   "nav": [
-    { "label": "Home", "href": "/" },
-    { "label": "Collection", "href": "/#collection" },
-    { "label": "About", "href": "/#about" }
+    { "label": "The Set", "href": "/#set" },
+    { "label": "Story", "href": "/#story" },
+    { "label": "Order", "href": "/#order" }
   ],
   "seo": {
-    "titleTemplate": "%s · Lumina Store",
-    "defaultTitle": "Lumina Store — Handmade Khurja ceramics & design objects",
-    "description": "Handmade, hand-painted Khurja ceramics and curated design objects. Each piece is shaped and painted by hand by artisans in Khurja, Uttar Pradesh — no two are ever alike.",
+    "titleTemplate": "%s · Morning Hut",
+    "defaultTitle": "Morning Hut — Handmade, hand-painted Khurja ceramics",
+    "description": "Handmade, hand-painted Khurja ceramics. Each piece is shaped and painted by hand by artisans in Khurja, Uttar Pradesh — no two are ever alike.",
     "keywords": [
       "Khurja pottery",
       "hand-painted ceramics",
       "handmade surahi",
       "ceramic pitcher set",
       "Indian handicraft",
-      "design objects"
+      "Morning Hut"
     ],
     "ogImage": "/products/morning-hut/full-set.jpg",
     "twitterCard": "summary_large_image"
