@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { getActiveTheme, themeStyle } from "@/lib/config";
 import { buildSiteMetadata } from "@/lib/metadata";
@@ -26,6 +26,12 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-hand",
+  display: "swap",
+});
+
 export const metadata: Metadata = buildSiteMetadata();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -33,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable} ${theme.mode}`}
+      className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable} ${caveat.variable} ${theme.mode}`}
       style={themeStyle(theme) as React.CSSProperties}
       suppressHydrationWarning
     >

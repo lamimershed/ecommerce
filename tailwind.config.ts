@@ -48,6 +48,7 @@ const config: Config = {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "Georgia", "serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        hand: ["var(--font-hand)", "cursive"],
       },
       letterSpacing: {
         tightest: "-0.045em",

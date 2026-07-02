@@ -8,7 +8,7 @@ import {
 } from "@/lib/config";
 import { buildProductMetadata } from "@/lib/metadata";
 import { ProductTemplate } from "@/components/templates/product-template";
-import { ArtisanProduct } from "@/components/templates/artisan-product";
+import { ArtisanExperience } from "@/components/product/artisan-experience";
 import { ProductJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 interface PageProps {
@@ -38,7 +38,7 @@ export default function ProductPage({ params }: PageProps) {
       <ProductJsonLd product={product} />
       <BreadcrumbJsonLd product={product} />
       {immersive ? (
-        <ArtisanProduct
+        <ArtisanExperience
           product={product}
           phone={site.whatsapp}
           productUrl={`${site.url}/${product.slug}`}
